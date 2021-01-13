@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
+    "@material-ui/docs": "^4.0.0-beta.3",
+    "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,6 +15,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "bootstrap": "^4.5.3",
+    "firebase": "^8.2.2",
     "graphql": "^15.4.0",
     "graphql.macro": "^1.4.2",
     "husky": "^4.3.7",

@@ -4,10 +4,13 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import Main from './Components/root/main';
+import Auth from './Components/Auth/Auth';
+import firebase from "firebase/app";
+import firebaseConfig from './Core/Firebase/firebaseInit';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main/>
+    <Auth/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -17,3 +20,4 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 serviceWorker.register();
+firebase.initializeApp(firebaseConfig);
