@@ -1,37 +1,26 @@
 import React from 'react';
 
 const Signin:React.FC<any> = (props) => {
-    const {email,setEmail,password,setPassword,handleSignin,handleSignUp,hasAccount,setHasAccount,emailError,passwordError
+    const {email,setEmail,password,setPassword,handleSignin,hasAccount,setHasAccount,emailError,passwordError
 
     } = props;
     return(
-        <section className="login">
-            works login
-            <div className="loginContainer">
-                <label htmlFor="">name</label>
+            <div className="SignupContainer">
                 <input type="text"
-                 autoFocus
+                  autoFocus
                   required 
                   value={email} 
-                  onChange={(e)=>setEmail(e.target.value)}/>
-                  <p className="errormsg"> {emailError}</p>
-                  <input type="password"
-                
+                  onChange={(e)=>setEmail(e.target.value)}
+                />
+                <p> {emailError}</p>
+                <input type="password"
                   required 
                   value={password} 
-                  onChange={(e)=>setPassword(e.target.value)}/>
-
-                  <div>
-                      
-                          
-                            <button onClick={handleSignin}>Signin</button>
-                          
-                  
-
-    
-                  </div>
+                  onChange={(e)=>setPassword(e.target.value)}
+                />
+                <p> {passwordError}</p>
+                <button onClick={handleSignin}>Signin</button>
             </div>
-        </section>
     )
 }
 export default Signin;

@@ -1,0 +1,39 @@
+{
+	"reactClass": {
+		"prefix": "react_class",
+		"body": [
+			"import React ,{ Component } from 'react';\r",
+			"\r",
+			"class $1 extends Component {\r",
+			"    $0 \r",
+			"    render (){\r",
+			"        return (\r",
+			"            <div>\r",
+			"                $1\r",
+			"            </div>\r",
+			"        )\r",
+			"    }\r",
+			"}\r",
+			"export default $1;"
+		],
+		"description": "simple class react"
+	},
+	
+		"React": {
+			"prefix": "react_func",
+			"body": [
+				"import React from 'react';\r",
+				"\r",
+				"const $1 = () => {\r",
+				"    $0 \r",
+				"    return (\r",
+				"        <div>\r",
+				"            $1 \r",
+				"        </div>\r",
+				"    )\r",
+				"}\r",
+				"export default $1;"
+			],
+			"description": "fonction react basique"
+	}
+}

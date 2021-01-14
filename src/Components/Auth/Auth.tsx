@@ -1,6 +1,5 @@
 import firebase from 'firebase';
 import React , { useState, useEffect } from "react";
-import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Signin from './Signin/Signin';
 
@@ -23,8 +22,9 @@ const Auth = () => {
    }
    const handleSignUp = () =>{
     clearErrors();
+    //alert("signUp ok");
        firebase.auth().createUserWithEmailAndPassword(email,password).then((user)=>{
-
+        
        })
        .catch((err)=>{
            switch (err.code){
@@ -42,6 +42,7 @@ const Auth = () => {
 
    const handleSignin = () =>{
     clearErrors();
+    //alert("signIn ok");
     firebase.auth().signInWithEmailAndPassword(email,password).then((user)=>{
 
     })
@@ -79,17 +80,31 @@ const Auth = () => {
 
    return(
        <div className="Auth">
+           {hasAccount ? ( 
            <Signin email={email}
-            setEmail={setEmail}
-             password={password} 
-             setPassword={setPassword}
-              handleSignin={handleSignin}
-               handleSignUp={handleSignUp} 
-               hasAccount={hasAccount}
-               setHasAccount={setHasAccount}
+                setEmail={setEmail}
+                password={password} 
+                setPassword={setPassword}
+                handleSignin={handleSignin}
+                 
+                hasAccount={hasAccount}
+                setHasAccount={setHasAccount}
                 emailError={emailError} 
                 passwordError={passwordError}
-                />
+            />
+           ):(<Signup email={email}
+                setEmail={setEmail}
+                password={password} 
+                setPassword={setPassword}
+                
+                handleSignUp={handleSignUp} 
+                hasAccount={hasAccount}
+                setHasAccount={setHasAccount}
+                emailError={emailError} 
+                passwordError={passwordError}
+            />
+           )}
+           <button onClick={()=>setHasAccount(!hasAccount)}>*</button>
        </div>
    );
 };
